@@ -1,0 +1,13 @@
+﻿@using My_Blog.Areas.Admin.Models;
+@model PostMaintainListViewModel
+@{
+    ViewBag.Title = "文章管理列表";
+}
+
+<h2>文章管理列表</h2>
+@Html.ActionLink("添加新文章", "Insert")
+<ul>
+    @foreach (var post in Model.Posts) {
+        <li>@Html.ActionLink((string)post.Title, "Update", new {id = post.Id})</li>
+    }
+</ul>
