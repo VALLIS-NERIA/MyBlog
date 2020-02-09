@@ -12,12 +12,6 @@ namespace My_Blog.Controllers {
     public class PostController : Controller {
         // GET: Post
         //获取文章列表
-
-        public static List<Post> posts = new List<Post>()
-        {
-            new Post() {ID = 1, Author = "mercury", Content = "文章内容", CreateDate = DateTime.Now, ModifyDate = DateTime.Now, title = "文章一"}
-        };
-
         private BlogManager manager = new BlogManager();
         public ActionResult Index() {
             var posts = this.manager.GetAllPosts().Select(PostViewModel.Create).ToList();
@@ -40,6 +34,4 @@ namespace My_Blog.Controllers {
             return View();
         }
     }
-
-//获取文章内容
 }

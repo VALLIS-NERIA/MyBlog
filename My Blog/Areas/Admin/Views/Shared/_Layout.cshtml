@@ -22,10 +22,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("主页", "Index", "Home")</li>
-                    <li>@Html.ActionLink("关于", "About", "Home")</li>
+                    <li>@Html.ActionLink("返回主页", "Index", "Home", new {area = ""}, null)</li>
+                    <li>@Html.ActionLink("关于", "About", "Home", new {area = ""}, null)</li>
                     <li>@Html.ActionLink("博客管理","Index","PostManagement")</li>
-                    <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("联系方式", "Contact", "Home", new {area = ""}, null)</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

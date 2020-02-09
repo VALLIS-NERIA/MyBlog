@@ -9,8 +9,10 @@
 @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "post-form" })) {
     <label>标题</label>
     <h2>@Html.TextBoxFor(viewModel => viewModel.Title)</h2>
+    <label>作者</label>
+    <div>@Html.TextBoxFor(viewModel => viewModel.Author)</div>
     <label>内容</label>
-    <h2>@Html.TextBoxFor(viewModel => viewModel.Content)</h2>
+    <div>@Html.EditorFor(viewModel => viewModel.Content)</div>
     <button type="submit">提交</button>
 }
 

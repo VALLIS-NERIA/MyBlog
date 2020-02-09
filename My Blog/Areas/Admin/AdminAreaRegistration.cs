@@ -17,7 +17,7 @@ namespace My_Blog.Areas.Admin
             context.MapRoute(
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional },
+                new { controller = "PostManagement", action = "Index", id = UrlParameter.Optional },
                 namespaces: new[] {"My_Blog.Areas.Admin.Controllers"}
             );
         }

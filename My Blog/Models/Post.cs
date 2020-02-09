@@ -4,15 +4,6 @@ using System.Linq;
 using System.Web;
 
 namespace My_Blog.Models {
-    public class Post {
-
-        public int ID { get; set; }
-        public string title { get; set; }
-        public string Content { get; set; }
-        public DateTime CreateDate { get; set; }
-        public DateTime ModifyDate { get; set; }
-        public string Author { get; set; }
-    }
 
     public class PostViewModel {
         public int Id { get; set; }

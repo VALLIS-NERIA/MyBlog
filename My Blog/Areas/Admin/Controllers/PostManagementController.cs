@@ -19,6 +19,7 @@ namespace My_Blog.Areas.Admin.Controllers
             {
                 Content = post.Content,
                 Id = post.Id,
+                Author = post.Author,
                 Title = post.Title
             }).ToList();
 
@@ -30,7 +31,7 @@ namespace My_Blog.Areas.Admin.Controllers
                 Posts = posts
             };
 
-            return View(postListViewModel);
+            return View(postListViewModel); // ViewModel可以作为参数传递给View
         }
 
         public ActionResult Update(int id) {
@@ -43,10 +44,11 @@ namespace My_Blog.Areas.Admin.Controllers
             {
                 Content = post.Content,
                 Id = post.Id,
+                Author = post.Author,
                 Title = post.Title
             };
 
-            return this.View(postViewModel);
+            return this.View(postViewModel); 
         }
 
         [HttpPost]
@@ -54,6 +56,7 @@ namespace My_Blog.Areas.Admin.Controllers
             var post = this.manager.GetPostById(postViewModel.Id);
             post.Content = postViewModel.Content;
             post.Title = postViewModel.Title;
+            post.Author = postViewModel.Author;
             post.ModifyDate = DateTime.Now;
             this.manager.UpdatePost(post);
             return RedirectToAction("Index");
@@ -69,7 +72,7 @@ namespace My_Blog.Areas.Admin.Controllers
             {
                 Title = postViewModel.Title,
                 Content = postViewModel.Content,
-                Author = "M",
+                Author = postViewModel.Author,
                 ClickCount = 0,
                 CreateDate = DateTime.Now,
                 ModifyDate = DateTime.Now,

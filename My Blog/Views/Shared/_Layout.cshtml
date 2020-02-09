@@ -24,7 +24,8 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("主页", "Index", "Home")</li>
                     <li>@Html.ActionLink("关于", "About", "Home")</li>
-                    <li>@Html.ActionLink("博客","index","post")</li>
+                    <li>@Html.ActionLink("博客","Index","Post")</li>
+                    <li>@Html.ActionLink("博客管理","Index","PostManagement", new{area="Admin"}, null)</li>
                     <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")

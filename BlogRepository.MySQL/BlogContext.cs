@@ -20,9 +20,6 @@ namespace BlogRepository.MySQL {
     }
 
     public class BlogEFMySQLConfiguration : DbConfiguration {
-        //static BlogEFMySQLConfiguration() {
-        //    DbConfiguration.SetConfiguration(new BlogEFMySQLConfiguration());
-        //}
         public BlogEFMySQLConfiguration() {
             SetProviderServices("MySql.Data.MySqlClient", new MySqlProviderServices());
             SetMigrationSqlGenerator("MySql.Data.MySqlClient", () => new MySqlMigrationSqlGenerator());
